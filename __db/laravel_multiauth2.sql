@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 09, 2021 at 07:07 AM
+-- Generation Time: Aug 09, 2021 at 04:10 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.14
 
@@ -82,6 +82,7 @@ CREATE TABLE `users` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `role` tinyint(1) NOT NULL,
   `favouriteColor` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `picture` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -93,10 +94,11 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `role`, `favouriteColor`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Suvajit Bardhan', 'admin@admin.com', 1, NULL, NULL, '$2y$10$1dUjZO2UlWLqr3h/fWxFieRej.pSTQzWnd5r.mr/niiBk2hYRjey2', NULL, '2021-08-08 06:08:32', '2021-08-08 06:08:32'),
-(2, 'test user', 'test@test.com', 2, NULL, NULL, '$2y$10$9H9LZe7PaIM9A6K.c4rHQeDP2.QuhsudkSP0PCEZEO18qz9INy2r2', NULL, '2021-08-08 06:10:53', '2021-08-08 06:10:53'),
-(3, 'Suvajit Bardhan', 'bardhansuvajit@gmail.com', 2, 'black', NULL, '$2y$10$atM.Xgc8vPFvZ6/4Cdni4Ozng1NARE9XdvxZlqA/p/C65BdsyQ/BW', NULL, '2021-08-08 12:38:46', '2021-08-08 12:38:46');
+INSERT INTO `users` (`id`, `name`, `email`, `role`, `favouriteColor`, `picture`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Suvajit Bardhan', 'admin@admin.com', 1, NULL, '431991628504914_avatar.png', NULL, '$2y$10$AaVEFsXRRfUTChq2CHBAqOobfnFmUlPdg6O6NGNgD8AF17teqrdSC', NULL, '2021-08-08 06:08:32', '2021-08-08 06:08:32'),
+(2, 'test user', 'test@test.com', 2, NULL, NULL, NULL, '$2y$10$9H9LZe7PaIM9A6K.c4rHQeDP2.QuhsudkSP0PCEZEO18qz9INy2r2', NULL, '2021-08-08 06:10:53', '2021-08-08 06:10:53'),
+(8, 'Suvajit Bardhan', 'bardhansuvajit@gmail.com', 2, 'red', '697621628504767_avatar.png', NULL, '$2y$10$GHh3e3cmTvMbut8P5dp1Be3d5ykRgyUkLjB05ZwhJTD0OsYgOGTPG', NULL, '2021-08-09 04:56:08', '2021-08-09 04:56:08'),
+(9, 'Suvajit Bardhan', 'bardhansuvajit@gmail.com2', 2, 'ee', '431991628504914_avatar.png', NULL, '$2y$10$7w52OOBrWhPjd8Lt95GiJ.L/nq5MLs8b0McVOaqQ3g6iSIWuFna1O', NULL, '2021-08-09 04:58:34', '2021-08-09 04:58:34');
 
 --
 -- Indexes for dumped tables
@@ -148,7 +150,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
