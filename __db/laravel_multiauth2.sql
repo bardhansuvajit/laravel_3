@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Aug 10, 2021 at 03:59 PM
+=======
+-- Generation Time: Aug 09, 2021 at 04:10 PM
+>>>>>>> a9f60ad08bd2e15f6413c228c24d3591ba1b9672
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.14
 
@@ -140,11 +144,18 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `role`, `favouriteColor`, `picture`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+<<<<<<< HEAD
 (1, 'Suvajit Bardhan 2', 'admin@admin.com', 1, NULL, '431991628504914_avatar.png', NULL, '$2y$10$AaVEFsXRRfUTChq2CHBAqOobfnFmUlPdg6O6NGNgD8AF17teqrdSC', NULL, '2021-08-08 06:08:32', '2021-08-10 06:12:11'),
 (2, 'test user', 'test@test.com', 2, NULL, NULL, NULL, '$2y$10$9H9LZe7PaIM9A6K.c4rHQeDP2.QuhsudkSP0PCEZEO18qz9INy2r2', NULL, '2021-08-08 06:10:53', '2021-08-08 06:10:53'),
 (8, 'Suvajit Bardhan', 'bardhansuvajit@gmail.com', 2, 'red', '697621628504767_avatar.png', NULL, '$2y$10$GHh3e3cmTvMbut8P5dp1Be3d5ykRgyUkLjB05ZwhJTD0OsYgOGTPG', NULL, '2021-08-09 04:56:08', '2021-08-09 04:56:08'),
 (9, 'Suvajit Bardhan', 'bardhansuvajit@gmail.com2', 2, 'ee', '431991628504914_avatar.png', NULL, '$2y$10$7w52OOBrWhPjd8Lt95GiJ.L/nq5MLs8b0McVOaqQ3g6iSIWuFna1O', NULL, '2021-08-09 04:58:34', '2021-08-09 04:58:34'),
 (10, 'Suvajit Bardhan', 'bardhansuvajit@gmail.com3', 2, 'test', '320611628578324_avatar.png', NULL, '$2y$10$9n/IMZb7dC04DegH.48a2ORMv.fpRTuDlyLkneskvwIFM3r08sLS.', NULL, '2021-08-10 01:22:04', '2021-08-10 01:22:04');
+=======
+(1, 'Suvajit Bardhan', 'admin@admin.com', 1, NULL, '431991628504914_avatar.png', NULL, '$2y$10$AaVEFsXRRfUTChq2CHBAqOobfnFmUlPdg6O6NGNgD8AF17teqrdSC', NULL, '2021-08-08 06:08:32', '2021-08-08 06:08:32'),
+(2, 'test user', 'test@test.com', 2, NULL, NULL, NULL, '$2y$10$9H9LZe7PaIM9A6K.c4rHQeDP2.QuhsudkSP0PCEZEO18qz9INy2r2', NULL, '2021-08-08 06:10:53', '2021-08-08 06:10:53'),
+(8, 'Suvajit Bardhan', 'bardhansuvajit@gmail.com', 2, 'red', '697621628504767_avatar.png', NULL, '$2y$10$GHh3e3cmTvMbut8P5dp1Be3d5ykRgyUkLjB05ZwhJTD0OsYgOGTPG', NULL, '2021-08-09 04:56:08', '2021-08-09 04:56:08'),
+(9, 'Suvajit Bardhan', 'bardhansuvajit@gmail.com2', 2, 'ee', '431991628504914_avatar.png', NULL, '$2y$10$7w52OOBrWhPjd8Lt95GiJ.L/nq5MLs8b0McVOaqQ3g6iSIWuFna1O', NULL, '2021-08-09 04:58:34', '2021-08-09 04:58:34');
+>>>>>>> a9f60ad08bd2e15f6413c228c24d3591ba1b9672
 
 --
 -- Indexes for dumped tables
@@ -221,6 +232,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
+<<<<<<< HEAD
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
@@ -232,6 +244,9 @@ ALTER TABLE `users`
 --
 ALTER TABLE `blogs`
   ADD CONSTRAINT `blogs_cat_id_foreign` FOREIGN KEY (`cat_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE;
+=======
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+>>>>>>> a9f60ad08bd2e15f6413c228c24d3591ba1b9672
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
