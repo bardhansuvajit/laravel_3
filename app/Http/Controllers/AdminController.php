@@ -11,6 +11,9 @@ class AdminController extends Controller
     public function index() {
         return view('dashboards.admins.index');
     }
+    public function category() {
+        return view('dashboards.admins.category');
+    }
     public function profile() {
         return view('dashboards.admins.profile');
     }
@@ -22,7 +25,6 @@ class AdminController extends Controller
         $validator = \Validator::make($request->all(),[
             'name'=>'required',
             'email'=> 'required|email|unique:users,email,'.Auth::user()->id,
-            'favoritecolor'=>'required',
         ]);
 
         if(!$validator->passes()) {
@@ -31,7 +33,6 @@ class AdminController extends Controller
             $query = User::find(Auth::user()->id)->update([
                 'name'=>$request->name,
                 'email'=>$request->email,
-                'favoriteColor'=>$request->favoritecolor,
             ]);
 
             if(!$query) {

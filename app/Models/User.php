@@ -51,6 +51,5 @@ class User extends Authenticatable
         } else {
             return asset('users/images/default_user_picture.png');
         }
-        
     }
 }

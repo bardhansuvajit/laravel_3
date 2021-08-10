@@ -23,6 +23,17 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $redirectTo ='';
+
+        switch(auth()->user()->role){
+            case 1: $redirectTo ='admin.dashboard';break;
+            case 2: $redirectTo ='user.dashboard';break;
+        }
+
+        if ($redirectTo != '') {
+            return redirect(route($redirectTo));
+        }
+
         return view('home');
     }
 }

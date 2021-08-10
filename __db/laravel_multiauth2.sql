@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 09, 2021 at 07:07 AM
+-- Generation Time: Aug 10, 2021 at 03:59 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.14
 
@@ -20,6 +20,49 @@ SET time_zone = "+00:00";
 --
 -- Database: `laravel_multiauth2`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blogs`
+--
+
+CREATE TABLE `blogs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `cat_id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `blogs`
+--
+
+INSERT INTO `blogs` (`id`, `cat_id`, `title`, `description`, `created_at`, `updated_at`) VALUES
+(1, 1, 'blog title', '<p>blog description</p>', '2021-08-10 07:50:52', '2021-08-10 07:50:52');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `category_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `category_name`, `created_at`, `updated_at`) VALUES
+(1, 'science', '2021-08-10 05:48:17', '2021-08-10 05:48:17'),
+(2, 'history', '2021-08-10 05:48:22', '2021-08-10 05:48:22');
 
 -- --------------------------------------------------------
 
@@ -56,7 +99,9 @@ CREATE TABLE `migrations` (
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
-(3, '2019_08_19_000000_create_failed_jobs_table', 1);
+(3, '2019_08_19_000000_create_failed_jobs_table', 1),
+(5, '2021_08_10_041149_create_categories_table', 2),
+(6, '2021_08_10_104558_create_blogs_table', 3);
 
 -- --------------------------------------------------------
 
@@ -82,6 +127,7 @@ CREATE TABLE `users` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `role` tinyint(1) NOT NULL,
   `favouriteColor` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `picture` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -93,14 +139,29 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `role`, `favouriteColor`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Suvajit Bardhan', 'admin@admin.com', 1, NULL, NULL, '$2y$10$1dUjZO2UlWLqr3h/fWxFieRej.pSTQzWnd5r.mr/niiBk2hYRjey2', NULL, '2021-08-08 06:08:32', '2021-08-08 06:08:32'),
-(2, 'test user', 'test@test.com', 2, NULL, NULL, '$2y$10$9H9LZe7PaIM9A6K.c4rHQeDP2.QuhsudkSP0PCEZEO18qz9INy2r2', NULL, '2021-08-08 06:10:53', '2021-08-08 06:10:53'),
-(3, 'Suvajit Bardhan', 'bardhansuvajit@gmail.com', 2, 'black', NULL, '$2y$10$atM.Xgc8vPFvZ6/4Cdni4Ozng1NARE9XdvxZlqA/p/C65BdsyQ/BW', NULL, '2021-08-08 12:38:46', '2021-08-08 12:38:46');
+INSERT INTO `users` (`id`, `name`, `email`, `role`, `favouriteColor`, `picture`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Suvajit Bardhan 2', 'admin@admin.com', 1, NULL, '431991628504914_avatar.png', NULL, '$2y$10$AaVEFsXRRfUTChq2CHBAqOobfnFmUlPdg6O6NGNgD8AF17teqrdSC', NULL, '2021-08-08 06:08:32', '2021-08-10 06:12:11'),
+(2, 'test user', 'test@test.com', 2, NULL, NULL, NULL, '$2y$10$9H9LZe7PaIM9A6K.c4rHQeDP2.QuhsudkSP0PCEZEO18qz9INy2r2', NULL, '2021-08-08 06:10:53', '2021-08-08 06:10:53'),
+(8, 'Suvajit Bardhan', 'bardhansuvajit@gmail.com', 2, 'red', '697621628504767_avatar.png', NULL, '$2y$10$GHh3e3cmTvMbut8P5dp1Be3d5ykRgyUkLjB05ZwhJTD0OsYgOGTPG', NULL, '2021-08-09 04:56:08', '2021-08-09 04:56:08'),
+(9, 'Suvajit Bardhan', 'bardhansuvajit@gmail.com2', 2, 'ee', '431991628504914_avatar.png', NULL, '$2y$10$7w52OOBrWhPjd8Lt95GiJ.L/nq5MLs8b0McVOaqQ3g6iSIWuFna1O', NULL, '2021-08-09 04:58:34', '2021-08-09 04:58:34'),
+(10, 'Suvajit Bardhan', 'bardhansuvajit@gmail.com3', 2, 'test', '320611628578324_avatar.png', NULL, '$2y$10$9n/IMZb7dC04DegH.48a2ORMv.fpRTuDlyLkneskvwIFM3r08sLS.', NULL, '2021-08-10 01:22:04', '2021-08-10 01:22:04');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `blogs`
+--
+ALTER TABLE `blogs`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `blogs_cat_id_foreign` (`cat_id`);
+
+--
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -133,6 +194,18 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `blogs`
+--
+ALTER TABLE `blogs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -142,13 +215,23 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `blogs`
+--
+ALTER TABLE `blogs`
+  ADD CONSTRAINT `blogs_cat_id_foreign` FOREIGN KEY (`cat_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

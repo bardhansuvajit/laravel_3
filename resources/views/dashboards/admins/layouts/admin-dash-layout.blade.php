@@ -29,7 +29,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link text-danger" data-widget="control-sidebar" data-slide="true" href="{{ route('logout') }}" role="button" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                    <i class="fas fa-sign-out-alt"></i> Logout
+                    <i class="fas fa-sign-out-alt"></i>
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
@@ -62,6 +62,22 @@
                             <i class="nav-icon fas fa-home"></i>
                             <p>
                                 Dashboard
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href=" {{ route('admin.category') }} " class="nav-link {{ (request()->is('admin/category*')) ? 'active' : '' }} ">
+                            <i class="nav-icon fas fa-list"></i>
+                            <p>
+                                Category
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href=" {{ route('admin.blog') }} " class="nav-link {{ (request()->is('admin/blog*')) ? 'active' : '' }} ">
+                            <i class="nav-icon fas fa-file"></i>
+                            <p>
+                                Blog
                             </p>
                         </a>
                     </li>
@@ -104,7 +120,11 @@
         </div>
 
         <div class="content">
-            @yield('content')
+            <section class="content">
+                <div class="container-fluid">
+                    @yield('content')
+                </div>
+            </section>
         </div>
     </div>
 
@@ -116,15 +136,17 @@
     </footer>
 </div>
 
-
 <script src="plugins/jquery/jquery.min.js"></script>
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="dist/js/adminlte.min.js"></script>
 
+</body>
+</html>
+
 <script>
     $.ajaxSetup({
         headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content');
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
 
@@ -143,18 +165,22 @@
                     $(document).find('span.error-text').text('');
                 },
                 success:function(data){
-                        if(data.status == 0) {
-                            $.each(data.error, function(prefix, val){
-                                $('span.'+prefix+'_error').text(val[0]);
-                            });
-                        } else {
-                            $('.admin_name').each(function(){
-                                $(this).html( $('#AdminInfoForm').find( $('input[name="name"]') ).val() );
-                            });
-                            alert(data.msg);
-                        }
+                    if(data.status == 0) {
+                        $.each(data.error, function(prefix, val){
+                            $('span.'+prefix+'_error').text(val[0]);
+                        });
+                    } else {
+                        $('.admin_name').each(function(){
+                            $(this).html( $('#AdminInfoForm').find( $('input[name="name"]') ).val() );
+                        });
+                        alert(data.msg);
+                    }
                 }
             });
+        });
+
+        $('#catBlogCreateForm').on('submit', function(e) {
+            e.preventDefault();
         });
 
         // $('#AdminInfoForm').on('submit', function(e){
@@ -172,7 +198,7 @@
         //         },
         //         success: function(data) {
         //             if (data.status == 0) {
-                        
+
         //             } else {
         //                 $('#AdminInfoForm')[0].reset();
         //             }
@@ -181,6 +207,3 @@
         // });
     });
 </script>
-
-</body>
-</html>
