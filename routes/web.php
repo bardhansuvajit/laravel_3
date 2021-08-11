@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Category\CategoryController;
 use App\Http\Controllers\Blog\BlogController;
 use App\Http\Controllers\Testimonial\TestimonialController;
-// use App\Http\Controllers\Faq\FaqController;
+use App\Http\Controllers\Faq\FaqController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -41,7 +41,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth']], functio
     Route::get('testimonial', [TestimonialController::class, 'index'])->name('admin.testimonial');
 
     // faq
-    // Route::get('faq', [FaqController::class, 'index'])->name('admin.faq');
+    Route::get('faq', [FaqController::class, 'index'])->name('admin.faq');
 });
 
 Route::group(['prefix' => 'user', 'middleware' => ['isUser', 'auth']], function () {

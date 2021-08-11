@@ -7,9 +7,9 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card">
-            {{-- <div class="card-header">
-                <a href="#" class="btn btn-sm btn-primary">Create new faq</a>
-            </div> --}}
+            <div class="card-header">
+                <a href="#" class="btn btn-sm btn-primary">Create new FAQ</a>
+            </div>
             <div class="card-body p-0">
                 <table class="table table-sm table-hover table-striped">
                     <thead>
@@ -19,7 +19,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- @foreach ($data as $item)
+                        @foreach ($data as $item)
                         <tr>
                             <td style="width:700px">
                                 <small> <strong>Q:</strong> {{ $item->question }}</small>
@@ -30,7 +30,7 @@
                                 <a href="admin/blog/delete/{{ $item->id }}" class="badge badge-dark rounded-0"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
-                        @endforeach --}}
+                        @endforeach
                     </tbody>
                 </table>
             </div>

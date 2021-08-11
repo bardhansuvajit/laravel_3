@@ -89,14 +89,14 @@
                             </p>
                         </a>
                     </li>
-                    {{-- <li class="nav-item">
+                    <li class="nav-item">
                         <a href=" {{ route('admin.faq') }} " class="nav-link {{ (request()->is('admin/faq*')) ? 'active' : '' }} ">
                             <i class="nav-icon fas fa-comment"></i>
                             <p>
                                 FAQ
                             </p>
                         </a>
-                    </li> --}}
+                    </li>
                     {{-- <li class="nav-item">
                         <a href=" {{ route('admin.blog') }} " class="nav-link {{ (request()->is('admin/blog*')) ? 'active' : '' }} ">
                             <i class="nav-icon fas fa-phone fa-rotate-90"></i>
