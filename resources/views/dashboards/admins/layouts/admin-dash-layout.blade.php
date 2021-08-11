@@ -82,6 +82,38 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href=" {{ route('admin.testimonial') }} " class="nav-link {{ (request()->is('admin/testimonial*')) ? 'active' : '' }} ">
+                            <i class="nav-icon fas fa-quote-left"></i>
+                            <p>
+                                Testimonial
+                            </p>
+                        </a>
+                    </li>
+                    {{-- <li class="nav-item">
+                        <a href=" {{ route('admin.faq') }} " class="nav-link {{ (request()->is('admin/faq*')) ? 'active' : '' }} ">
+                            <i class="nav-icon fas fa-comment"></i>
+                            <p>
+                                FAQ
+                            </p>
+                        </a>
+                    </li> --}}
+                    {{-- <li class="nav-item">
+                        <a href=" {{ route('admin.blog') }} " class="nav-link {{ (request()->is('admin/blog*')) ? 'active' : '' }} ">
+                            <i class="nav-icon fas fa-phone fa-rotate-90"></i>
+                            <p>
+                                Contact
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href=" {{ route('admin.blog') }} " class="nav-link {{ (request()->is('admin/blog*')) ? 'active' : '' }} ">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>
+                                Users
+                            </p>
+                        </a>
+                    </li> --}}
+                    <li class="nav-item">
                         <a href=" {{ route('admin.profile') }} " class="nav-link {{ (request()->is('admin/profile*')) ? 'active' : '' }} ">
                             <i class="nav-icon fas fa-user"></i>
                             <p>
