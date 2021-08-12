@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 12, 2021 at 02:18 PM
+-- Generation Time: Aug 12, 2021 at 08:31 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.14
 
@@ -41,7 +41,7 @@ CREATE TABLE `blogs` (
 --
 
 INSERT INTO `blogs` (`id`, `cat_id`, `title`, `description`, `created_at`, `updated_at`) VALUES
-(1, 1, 'blog title', '<p>blog description</p>', '2021-08-10 07:50:52', '2021-08-10 07:50:52');
+(3, 1, '1914 translation by H. Rackham', '<h3><strong>The standard Lorem Ipsum passage, used since the 1500s</strong></h3><p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"</p><h3><strong>Section 1.10.32 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC</strong></h3><p>\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"</p>', '2021-08-12 11:30:48', '2021-08-12 11:30:48');
 
 -- --------------------------------------------------------
 
@@ -53,16 +53,18 @@ CREATE TABLE `categories` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `category_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `categories`
 --
 
-INSERT INTO `categories` (`id`, `category_name`, `created_at`, `updated_at`) VALUES
-(1, 'science', '2021-08-10 05:48:17', '2021-08-10 05:48:17'),
-(2, 'history', '2021-08-10 05:48:22', '2021-08-10 05:48:22');
+INSERT INTO `categories` (`id`, `category_name`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'science', '2021-08-10 05:48:17', '2021-08-10 05:48:17', NULL),
+(2, 'history', '2021-08-10 05:48:22', '2021-08-10 05:48:22', NULL),
+(11, 'hello', '2021-08-12 12:56:20', '2021-08-12 12:56:22', '2021-08-12 12:56:22');
 
 -- --------------------------------------------------------
 
@@ -122,7 +124,7 @@ CREATE TABLE `faqs` (
 --
 
 INSERT INTO `faqs` (`id`, `question`, `answer`, `created_at`, `updated_at`) VALUES
-(1, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', 'when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', NULL, NULL);
+(2, 'What is Lorem Ipsum?', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -183,7 +185,6 @@ CREATE TABLE `testimonials` (
 --
 
 INSERT INTO `testimonials` (`id`, `name`, `designation`, `quotation`, `created_at`, `updated_at`) VALUES
-(1, 'suvajit bardhan', 'employee', 'greetings, everyone ! I have been working with OTS for past 7 days and the experience i great. all I can say is this is a great company.', NULL, NULL),
 (2, 'Lorem Ipsum', 'lipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has su', NULL, NULL);
 
 -- --------------------------------------------------------
@@ -203,18 +204,19 @@ CREATE TABLE `users` (
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `role`, `favouriteColor`, `picture`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Suvajit Bardhan 2', 'admin@admin.com', 1, NULL, NULL, NULL, '$2y$10$AaVEFsXRRfUTChq2CHBAqOobfnFmUlPdg6O6NGNgD8AF17teqrdSC', NULL, '2021-08-08 06:08:32', '2021-08-10 06:12:11'),
-(2, 'test user', 'test@test.com', 2, NULL, NULL, NULL, '$2y$10$9H9LZe7PaIM9A6K.c4rHQeDP2.QuhsudkSP0PCEZEO18qz9INy2r2', NULL, '2021-08-08 06:10:53', '2021-08-08 06:10:53'),
-(9, 'Suvajit Bardhan', 'bardhansuvajit@gmail.com2', 2, 'ee', '431991628504914_avatar.png', NULL, '$2y$10$7w52OOBrWhPjd8Lt95GiJ.L/nq5MLs8b0McVOaqQ3g6iSIWuFna1O', NULL, '2021-08-09 04:58:34', '2021-08-09 04:58:34'),
-(10, 'Suvajit Bardhan', 'bardhansuvajit@gmail.com3', 2, 'test', '320611628578324_avatar.png', NULL, '$2y$10$9n/IMZb7dC04DegH.48a2ORMv.fpRTuDlyLkneskvwIFM3r08sLS.', NULL, '2021-08-10 01:22:04', '2021-08-10 01:22:04');
+INSERT INTO `users` (`id`, `name`, `email`, `role`, `favouriteColor`, `picture`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Suvajit Bardhan', 'admin@admin.com', 1, NULL, NULL, NULL, '$2y$10$AaVEFsXRRfUTChq2CHBAqOobfnFmUlPdg6O6NGNgD8AF17teqrdSC', NULL, '2021-08-08 06:08:32', '2021-08-12 11:57:31', NULL),
+(2, 'test user', 'test@test.com', 2, NULL, NULL, NULL, '$2y$10$9H9LZe7PaIM9A6K.c4rHQeDP2.QuhsudkSP0PCEZEO18qz9INy2r2', NULL, '2021-08-08 06:10:53', '2021-08-08 06:10:53', NULL),
+(9, 'Suvajit Bardhan', 'bardhansuvajit@gmail.com2', 2, 'ee', '431991628504914_avatar.png', NULL, '$2y$10$7w52OOBrWhPjd8Lt95GiJ.L/nq5MLs8b0McVOaqQ3g6iSIWuFna1O', NULL, '2021-08-09 04:58:34', '2021-08-09 04:58:34', NULL),
+(10, 'Suvajit Bardhan', 'bardhansuvajit@gmail.com3', 2, 'test', '320611628578324_avatar.png', NULL, '$2y$10$9n/IMZb7dC04DegH.48a2ORMv.fpRTuDlyLkneskvwIFM3r08sLS.', NULL, '2021-08-10 01:22:04', '2021-08-12 13:01:07', '2021-08-12 13:01:07');
 
 --
 -- Indexes for dumped tables
@@ -285,13 +287,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `contact_us`
@@ -309,7 +311,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `faqs`
 --
 ALTER TABLE `faqs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `migrations`

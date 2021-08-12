@@ -10,6 +10,7 @@ use App\Models\Category;
 class CategoryController extends Controller
 {
     public function blog_category() {
+        // $data = Category::withTrashed()->paginate(10);
         $data = Category::paginate(10);
         return view('dashboards.admins.category-blog', compact('data'));
     }
@@ -31,7 +32,8 @@ class CategoryController extends Controller
     }
 
     public function blog_category_delete($id) {
-        $delete = DB::table('categories')->where('id', $id)->delete();
+        // $delete = DB::table('categories')->where('id', $id)->delete();
+        $delete = Category::find($id)->delete();
         if ($delete) {
             return redirect()->back()->with('success', 'Category deleted');
         } else {

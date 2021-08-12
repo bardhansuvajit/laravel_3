@@ -28,9 +28,9 @@
                         @foreach ($data as $item)
                         <tr>
                             <td style="width:700px">
-                                <small> <strong>Q:</strong> {{ $item->question }}</small>
-                                <hr>
-                                <small> <strong>A:</strong> {{ $item->answer }}</small>
+                                <small title="Question : {{ $item->question }}"> <strong>Q : </strong> {{ mb_strimwidth($item->question, 0, 97, '...') }}</small>
+                                <hr class="my-1">
+                                <small title="Answer : {{ $item->answer }}"> <strong>A : </strong> {{ mb_strimwidth($item->answer, 0, 97, '...') }}</small>
                             </td>
                             <td class="text-right">
                                 <a href="admin/faq/delete/{{ $item->id }}" class="badge badge-dark rounded-0"><i class="fas fa-trash"></i></a>

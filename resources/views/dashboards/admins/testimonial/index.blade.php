@@ -34,7 +34,7 @@
                                 <span class="badge badge-primary rounded-0">{{ ucwords($item->designation) }}</span>
                             </td>
                             <td style="width:700px">
-                                <small>{{ $item->quotation }}</small>
+                                <small title="{{ $item->quotation }}">{{ mb_strimwidth($item->quotation, 0, 97, '...') }}</small>
                             </td>
                             <td class="text-right">
                                 <a href="admin/testimonial/delete/{{ $item->id }}" class="badge badge-dark rounded-0"><i class="fas fa-trash"></i></a>

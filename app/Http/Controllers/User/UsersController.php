@@ -13,4 +13,14 @@ class UsersController extends Controller
         $data = User::where('role', 2)->paginate(10);
         return view('dashboards.admins.users.index', compact('data'));
     }
+
+    public function delete($id) {
+        // $delete = DB::table('categories')->where('id', $id)->delete();
+        $delete = User::find($id)->delete();
+        if ($delete) {
+            return redirect()->back()->with('success', 'User deleted');
+        } else {
+            return redirect()->back()->with('fail', 'Something happened');
+        }
+    }
 }

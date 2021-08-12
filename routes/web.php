@@ -53,6 +53,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth']], functio
 
     //users
     Route::get('users', [UsersController::class, 'index'])->name('admin.users');
+    Route::get('users/delete/{id}', [UsersController::class, 'delete']);
 });
 
 Route::group(['prefix' => 'user', 'middleware' => ['isUser', 'auth']], function () {
