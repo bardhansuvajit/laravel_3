@@ -8,7 +8,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <a href="#" class="btn btn-sm btn-primary">Create new FAQ</a>
+                <a href="{{ route('faqCreate') }}" class="btn btn-sm btn-primary">Create new FAQ</a>
             </div>
             <div class="card-body p-0">
                 @if (Session::get('success'))
@@ -32,7 +32,7 @@
                                 <hr class="my-1">
                                 <small title="Answer : {{ $item->answer }}"> <strong>A : </strong> {{ mb_strimwidth($item->answer, 0, 97, '...') }}</small>
                             </td>
-                            <td class="text-right">
+                            <td style="width: 100px" class="text-right">
                                 <a href="admin/faq/delete/{{ $item->id }}" class="badge badge-dark rounded-0"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>

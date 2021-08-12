@@ -46,6 +46,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth']], functio
 
     // faq
     Route::get('faq', [FaqController::class, 'index'])->name('admin.faq');
+    Route::get('faq/create', [FaqController::class, 'create'])->name('faqCreate');
+    Route::post('faqCreate', [FaqController::class, 'faqCreate'])->name('faq_create');
     Route::get('faq/delete/{id}', [FaqController::class, 'delete']);
 
     //contact-us forms
