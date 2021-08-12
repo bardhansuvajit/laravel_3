@@ -27,7 +27,7 @@
                                 <a href="mailto:{{ ucwords($item->email) }}">{{ ucwords($item->email) }}</a>
                             </td>
                             <td class="text-right">
-                                {{-- <a href="admin/blog/delete/{{ $item->id }}" class="badge badge-dark rounded-0"><i class="fas fa-trash"></i></a> --}}
+                                <a href="admin/blog/delete/{{ $item->id }}" class="badge badge-dark rounded-0"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                         @endforeach

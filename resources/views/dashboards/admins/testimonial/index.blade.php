@@ -11,6 +11,12 @@
                 <a href="#" class="btn btn-sm btn-primary">Create new testimonial</a>
             </div> --}}
             <div class="card-body p-0">
+                @if (Session::get('success'))
+                    <div class="alert alert-success">{{(Session::get('success'))}}</div>
+                @endif
+                @if (Session::get('error'))
+                    <div class="alert alert-danger">{{(Session::get('error'))}}</div>
+                @endif
                 <table class="table table-sm table-hover table-striped">
                     <thead>
                         <tr>
@@ -31,7 +37,7 @@
                                 <small>{{ $item->quotation }}</small>
                             </td>
                             <td class="text-right">
-                                <a href="admin/blog/delete/{{ $item->id }}" class="badge badge-dark rounded-0"><i class="fas fa-trash"></i></a>
+                                <a href="admin/testimonial/delete/{{ $item->id }}" class="badge badge-dark rounded-0"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                         @endforeach

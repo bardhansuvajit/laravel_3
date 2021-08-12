@@ -211,9 +211,9 @@
             });
         });
 
-        $('#catBlogCreateForm').on('submit', function(e) {
-            e.preventDefault();
-        });
+        // $('#catBlogCreateForm').on('submit', function(e) {
+        //     e.preventDefault();
+        // });
 
         // $('#AdminInfoForm').on('submit', function(e){
         //     e.preventDefault();

@@ -12,7 +12,7 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text text-dark">Blog</span>
-                    <span class="info-box-number text-dark">13,648</span>
+                    {{-- <span class="info-box-number text-dark">13,648</span> --}}
                 </div>
             </div>
         </a>

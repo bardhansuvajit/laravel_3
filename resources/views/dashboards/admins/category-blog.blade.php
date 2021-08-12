@@ -15,7 +15,13 @@
                 {{-- <a href="#catBlogCreateModal" data-toggle="modal" class="btn btn-primary"><i class="fas fa-plus"></i> Add new</a> --}}
                 <h5>Category list</h5>
             </div>
-            <div class="card-body">
+            <div class="card-body p-0">
+                @if (Session::get('success'))
+                    <div class="alert alert-success">{{(Session::get('success'))}}</div>
+                @endif
+                @if (Session::get('error'))
+                    <div class="alert alert-danger">{{(Session::get('error'))}}</div>
+                @endif
                 <table class="table table-sm table-hover">
                     <tbody>
                         @forelse ($data as $item)
@@ -43,12 +49,6 @@
                 <h5>Add new category</h5>
             </div>
             <div class="card-body">
-                @if (Session::get('success'))
-                <div class="alert alert-success">{{(Session::get('success'))}}</div>
-                @endif
-                @if (Session::get('error'))
-                <div class="alert alert-danger">{{(Session::get('error'))}}</div>
-                @endif
                 <form action="{{ route('categoryBlogCreate') }}" method="POST" id="catBlogCreateForm">
                     @csrf
 

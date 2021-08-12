@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Blog;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 
@@ -33,6 +34,14 @@ class BlogController extends Controller
             return redirect()->back()->with('success', 'Blog added successfully');
         } else {
             return redirect()->back()->with('error', 'Something happened');
+        }
+    }
+    public function blogDelete($id) {
+        $delete = DB::table('blogs')->where('id', $id)->delete();
+        if ($delete) {
+            return redirect()->back()->with('success', 'Blog deleted');
+        } else {
+            return redirect()->back()->with('fail', 'Something happened');
         }
     }
 }

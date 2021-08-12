@@ -38,12 +38,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth']], functio
     Route::get('blog', [BlogController::class, 'index'])->name('admin.blog');
     Route::get('blog/create', [BlogController::class, 'create'])->name('create');
     Route::post('blogCreate', [BlogController::class, 'blogCreate'])->name('blog_create');
+    Route::get('testimonial/delete/{id}', [BlogController::class, 'blogDelete']);
 
     // testimonial
     Route::get('testimonial', [TestimonialController::class, 'index'])->name('admin.testimonial');
+    Route::get('testimonial/delete/{id}', [TestimonialController::class, 'delete']);
 
     // faq
     Route::get('faq', [FaqController::class, 'index'])->name('admin.faq');
+    Route::get('faq/delete/{id}', [FaqController::class, 'delete']);
 
     //contact-us forms
     Route::get('contacts', [ContactsController::class, 'index'])->name('admin.contacts');

@@ -10,8 +10,14 @@
             <div class="card-header">
                 <a href="{{ route('create') }}" class="btn btn-sm btn-primary">Write new blog</a>
             </div>
-            <div class="card-body">
-                <table class="table table-sm table-hover table-striped">
+            <div class="card-body p-0">
+                @if (Session::get('success'))
+                    <div class="alert alert-success">{{(Session::get('success'))}}</div>
+                @endif
+                @if (Session::get('error'))
+                    <div class="alert alert-danger">{{(Session::get('error'))}}</div>
+                @endif
+                <table class="table table-sm table-bordered table-hover table-striped">
                     <thead>
                         <tr>
                             <th>Title</th>

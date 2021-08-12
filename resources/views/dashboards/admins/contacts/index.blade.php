@@ -24,9 +24,11 @@
                                 {{ ucwords($item->name) }}
                             </td>
                             <td>
-                                <a href="tel:{{ ucwords($item->phone) }}">{{ ucwords($item->phone) }}</a>
+                                <a href="tel:{{ $item->phone }}"><i class="fa fa-phone fa-rotate mr-2" aria-hidden="true"></i>{{ ucwords($item->phone) }}</a>
+                                <br>
+                                <a href="mailto:{{ $item->email }}"><i class="fa fa-envelope mr-2" aria-hidden="true"></i>{{ strtolower($item->email) }}</a>
                             </td>
-                            <td>
+                            <td style="width:500px">
                                 <small>{{ $item->message }}</small>
                             </td>
                             <td class="text-right">

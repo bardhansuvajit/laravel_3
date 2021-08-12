@@ -11,7 +11,13 @@
                 <a href="#" class="btn btn-sm btn-primary">Create new FAQ</a>
             </div>
             <div class="card-body p-0">
-                <table class="table table-sm table-hover table-striped">
+                @if (Session::get('success'))
+                    <div class="alert alert-success">{{(Session::get('success'))}}</div>
+                @endif
+                @if (Session::get('error'))
+                    <div class="alert alert-danger">{{(Session::get('error'))}}</div>
+                @endif
+                <table class="table table-sm table-bordered table-hover table-striped">
                     <thead>
                         <tr>
                             <th>FAQ</th>
@@ -27,7 +33,7 @@
                                 <small> <strong>A:</strong> {{ $item->answer }}</small>
                             </td>
                             <td class="text-right">
-                                {{-- <a href="admin/blog/delete/{{ $item->id }}" class="badge badge-dark rounded-0"><i class="fas fa-trash"></i></a> --}}
+                                <a href="admin/faq/delete/{{ $item->id }}" class="badge badge-dark rounded-0"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                         @endforeach
