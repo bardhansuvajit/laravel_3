@@ -97,22 +97,22 @@
                             </p>
                         </a>
                     </li>
-                    {{-- <li class="nav-item">
-                        <a href=" {{ route('admin.blog') }} " class="nav-link {{ (request()->is('admin/blog*')) ? 'active' : '' }} ">
+                    <li class="nav-item">
+                        <a href=" {{ route('admin.contacts') }} " class="nav-link {{ (request()->is('admin/contacts*')) ? 'active' : '' }} ">
                             <i class="nav-icon fas fa-phone fa-rotate-90"></i>
                             <p>
-                                Contact
+                                Contacts
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href=" {{ route('admin.blog') }} " class="nav-link {{ (request()->is('admin/blog*')) ? 'active' : '' }} ">
+                        <a href=" {{ route('admin.users') }} " class="nav-link {{ (request()->is('admin/users*')) ? 'active' : '' }} ">
                             <i class="nav-icon fas fa-users"></i>
                             <p>
                                 Users
                             </p>
                         </a>
-                    </li> --}}
+                    </li>
                     <li class="nav-item">
                         <a href=" {{ route('admin.profile') }} " class="nav-link {{ (request()->is('admin/profile*')) ? 'active' : '' }} ">
                             <i class="nav-icon fas fa-user"></i>

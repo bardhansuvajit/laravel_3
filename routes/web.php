@@ -10,6 +10,8 @@ use App\Http\Controllers\Category\CategoryController;
 use App\Http\Controllers\Blog\BlogController;
 use App\Http\Controllers\Testimonial\TestimonialController;
 use App\Http\Controllers\Faq\FaqController;
+use App\Http\Controllers\Contacts\ContactsController;
+use App\Http\Controllers\User\UsersController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -42,6 +44,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth']], functio
 
     // faq
     Route::get('faq', [FaqController::class, 'index'])->name('admin.faq');
+
+    //contact-us forms
+    Route::get('contacts', [ContactsController::class, 'index'])->name('admin.contacts');
+
+    //users
+    Route::get('users', [UsersController::class, 'index'])->name('admin.users');
 });
 
 Route::group(['prefix' => 'user', 'middleware' => ['isUser', 'auth']], function () {

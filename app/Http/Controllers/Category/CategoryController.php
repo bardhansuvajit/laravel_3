@@ -10,12 +10,8 @@ use App\Models\Category;
 class CategoryController extends Controller
 {
     public function blog_category() {
-        $data = Category::paginate(6);
-        // $data = Category::all();
+        $data = Category::paginate(1);
         return view('dashboards.admins.category-blog', compact('data'));
-
-        // $data = DB::table('categories')->get();
-        // return view('dashboards.admins.category-blog', ['categories' => $data]);
     }
 
     public function blog_category_create(Request $request) {

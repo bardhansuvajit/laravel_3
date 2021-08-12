@@ -1,6 +1,5 @@
 <?php
 // MAKE AVATAR FUNCTION
-
 if(!function_exists('makeAvatar')) {
     function makeAvatar($fontPath, $dest, $char){
         $path = $dest;
@@ -14,6 +13,15 @@ if(!function_exists('makeAvatar')) {
         imagepng($image, $path);
         imagedestroy($image);
         return $path;
+    }
+}
+
+// CHECK USER IMAGE AVAILABILITY
+function checkPicture($value) {
+    if ($value) {
+        return asset($value);
+    } else {
+        return asset('users/images/default_user_picture.png');
     }
 }
 ?>
