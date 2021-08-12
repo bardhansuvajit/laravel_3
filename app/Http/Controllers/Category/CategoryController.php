@@ -18,7 +18,13 @@ class CategoryController extends Controller
     public function blog_category_create(Request $request) {
         // return $request->input();
         $request->validate([
-            'category' => ['required', 'string', 'min:4', 'max:255', 'unique:categories,category_name'],
+            'category' => [
+                'required',
+                'string',
+                'min:4',
+                'max:255',
+                'unique:categories,category_name'
+            ],
         ]);
 
         $category = new Category();

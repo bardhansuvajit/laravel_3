@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 12, 2021 at 08:31 PM
+-- Generation Time: Aug 12, 2021 at 09:33 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.14
 
@@ -64,7 +64,10 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`id`, `category_name`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'science', '2021-08-10 05:48:17', '2021-08-10 05:48:17', NULL),
 (2, 'history', '2021-08-10 05:48:22', '2021-08-10 05:48:22', NULL),
-(11, 'hello', '2021-08-12 12:56:20', '2021-08-12 12:56:22', '2021-08-12 12:56:22');
+(11, 'hello', '2021-08-12 12:56:20', '2021-08-12 12:56:22', '2021-08-12 12:56:22'),
+(12, 'hello2', '2021-08-12 13:48:00', '2021-08-12 13:48:00', NULL),
+(13, 'hello22', '2021-08-12 19:18:24', '2021-08-12 19:18:24', NULL),
+(14, 'hello555', '2021-08-12 19:32:59', '2021-08-12 19:32:59', NULL);
 
 -- --------------------------------------------------------
 
@@ -124,7 +127,8 @@ CREATE TABLE `faqs` (
 --
 
 INSERT INTO `faqs` (`id`, `question`, `answer`, `created_at`, `updated_at`) VALUES
-(2, 'What is Lorem Ipsum?', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', NULL, NULL);
+(2, 'What is Lorem Ipsum?', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', NULL, NULL),
+(3, 'test', 'test ans', '2021-08-12 13:26:41', '2021-08-12 13:26:41');
 
 -- --------------------------------------------------------
 
@@ -293,7 +297,7 @@ ALTER TABLE `blogs`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `contact_us`
@@ -311,7 +315,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `faqs`
 --
 ALTER TABLE `faqs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `migrations`
