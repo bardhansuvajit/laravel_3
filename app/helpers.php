@@ -17,11 +17,13 @@ if(!function_exists('makeAvatar')) {
 }
 
 // CHECK USER IMAGE AVAILABILITY
-function checkPicture($value) {
-    if ($value) {
-        return asset($value);
-    } else {
-        return asset('users/images/default_user_picture.png');
+if(!function_exists('checkPicture')) {
+    function checkPicture($value) {
+        if ($value) {
+            return asset($value);
+        } else {
+            return asset('users/images/default_user_picture.png');
+        }
     }
 }
 ?>

@@ -130,3 +130,16 @@
         </div>
     </body>
 </html>
+
+<?php
+    for ($arr_index = 0; $arr_index < 101; $arr_index++) {
+        $custom_index = $arr_index + 1;
+        $data = array(
+            $arr_index => array(
+                "name" => 'name'.$custom_index,
+            ),
+        );
+
+        echo "<pre>";print_r($data);
+    }
+?>
